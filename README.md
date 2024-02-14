@@ -1,6 +1,9 @@
+## TM Audio Player
 
-npm login
+## Development Env
+`npm install`
+`npm run dev`
 
-# deploy to npm
-
-npm publish
+### Commands to publish
+`npm login`
+`npm publish`
