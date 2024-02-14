@@ -1,5 +1,6 @@
 
 npm login
 
-#deploy to npm
+# deploy to npm
+
 npm publish
