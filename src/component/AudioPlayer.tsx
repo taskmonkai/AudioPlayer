@@ -225,7 +225,6 @@ const AudioPlayer: React.FC<
 
   useEffect(() => {
     setLoading(true);
-    console.log(src);
     fetch(src)
       .then(async (response): Promise<Blob> => {
         const blob = await response.blob();
@@ -269,6 +268,7 @@ const AudioPlayer: React.FC<
         const audioContext = new AudioContext();
         await audioContext.decodeAudioData(audioBuffer, (buffer) => {
           setDuration(buffer.duration);
+          setIsPlaying(false);
           setLoading(false);
         });
       });
@@ -277,7 +277,7 @@ const AudioPlayer: React.FC<
       // clean up
       audio.removeEventListener("ended", onAudioEnded);
     };
-  }, []);
+  }, [src]);
 
   const onAudioEnded = (): void => {
     setIsPlaying(false);
@@ -287,7 +287,6 @@ const AudioPlayer: React.FC<
   const playAudio = (): void => {
     if (!audio.src) return;
     if (audio.duration !== Infinity) setDuration(audio.duration);
-
     audio.play();
     setIsPlaying(true);
 
