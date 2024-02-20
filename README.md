@@ -1,11 +1,13 @@
 ## TM Audio Player
 
-### Development Env
-`npm install`
+### Installation
 
-`npm run dev`
+    npm i -S tm-audio-player
 
-### Commands to publish
-`npm login`
+### Usage
 
-`npm publish`
+    import { AudioPlayer } from "tm-audio-player"
+    ...
+    ...
+    <AudioPlayer src={src} width={400} />
+    ...

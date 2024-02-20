@@ -224,6 +224,7 @@ const AudioPlayer: React.FC<
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    console.log("in effect")
     setLoading(true);
     fetch(src)
       .then(async (response): Promise<Blob> => {
@@ -276,8 +277,9 @@ const AudioPlayer: React.FC<
     return () => {
       // clean up
       audio.removeEventListener("ended", onAudioEnded);
+      audio.src=""
     };
-  }, [src]);
+  }, []);
 
   const onAudioEnded = (): void => {
     setIsPlaying(false);
