@@ -11,3 +11,7 @@
     ...
     <AudioPlayer src={src} width={400} />
     ...
+
+### Features
+
+Play/pause (strl+space), volume control(ctrl+up/down arrow), seek (ctrl+right/left arrow)
