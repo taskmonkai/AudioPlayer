@@ -362,7 +362,6 @@ const AudioPlayer: React.FC<
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      // console.log(event.key);
       if (event.ctrlKey) {
         switch (event.key) {
           case " ": // Space key
@@ -459,7 +458,7 @@ const AudioPlayer: React.FC<
                 gridTemplateRows: "1fr",
                 width: width * 0.7,
                 height: trackHeight,
-                minWidth: "100px",
+                minWidth: "200px",
               }}
             >
               {/* {visualise && blob && (
