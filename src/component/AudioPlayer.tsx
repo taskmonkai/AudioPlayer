@@ -284,6 +284,9 @@ const AudioPlayer: React.FC<
   const onAudioEnded = (): void => {
     setIsPlaying(false);
     setAudioTime(0);
+    if(audio.loop){
+      audio.play()
+    }
   };
 
   const playAudio = (): void => {
@@ -297,11 +300,11 @@ const AudioPlayer: React.FC<
     // }
 
     const handleTimeUpdates = (): void => {
-      if (audio.currentTime >= duration) {
-        pauseAudio();
-        setAudioTime(0);
-        return;
-      }
+      // if (audio.currentTime >= duration) {
+      //   pauseAudio();
+      //   setAudioTime(0);
+      //   return;
+      // }
       setCurrentTime(audio.currentTime);
 
       requestAnimationFrame(handleTimeUpdates);
