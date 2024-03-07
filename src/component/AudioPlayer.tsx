@@ -510,7 +510,7 @@ const AudioPlayer: React.FC<
             >
               {showLoopOption && (
                 <img
-                  src={isLoop ? repeatSVG : repeatOneSVG}
+                  src={isLoop ? repeatOneSVG : repeatSVG}
                   onClick={toggleAudioLoop}
                   title={"Loop"}
                   style={{
